@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Workplace Read | BlueChip People Strategies</title>
-  <meta name="description" content="20 questions. 5 minutes. A clear read on what's actually happening at work — and what to do about it." />
+  <title>The Promoted Playbook | BlueChip People Strategies</title>
+  <meta name="description" content="8 questions. 5 minutes. Find out what kind of supervisor you actually are — and get your personalized cheat code." />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -12,10 +12,10 @@
     body{background:#FFFFFF;color:#1A1A1A;font-family:'DM Sans',system-ui,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}
     .sqs-block-code,.sqs-block,.sqs-col-12,.sqs-row,.sqs-layout,.sqs-block-content{width:100%!important;max-width:100%!important;padding:0!important;margin:0!important}
     .screen{display:none;width:100%}.screen.active{display:block}
-    .inner{width:min(90%,640px);margin:0 auto;padding:5vw 4vw}
+    .inner{width:min(90%,620px);margin:0 auto;padding:5vw 4vw}
     .top-bar{position:fixed;top:0;left:0;right:0;height:5px;background:#1E3A8A;z-index:100}
     .eyebrow{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.4em;color:#1E3A8A;text-transform:uppercase;margin-bottom:14px;font-weight:600}
-    .headline{font-size:clamp(44px,8vw,64px);font-weight:600;line-height:1.0;margin-bottom:10px;color:#1A1A1A;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em}
+    .headline{font-size:clamp(46px,9vw,66px);font-weight:600;line-height:1.0;margin-bottom:10px;color:#1A1A1A;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em}
     .headline .blue{color:#1E3A8A}
     .blue-rule{width:48px;height:3px;background:#1E3A8A;margin:22px 0}
     .body-text{font-size:16px;color:#555;line-height:1.8;margin-bottom:32px;font-weight:300;max-width:460px}
@@ -35,415 +35,408 @@
     .assess-brand{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.3em;color:#1E3A8A;text-transform:uppercase;font-weight:600}
     .assess-count{font-size:13px;color:#BBB;font-family:'DM Sans',sans-serif;font-weight:300}
     .assess-count strong{color:#1A1A1A;font-weight:600}
-    .domain-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.3em;color:#1E3A8A;background:#EEF1FB;border:1px solid #C8D2F0;border-radius:50px;padding:5px 14px;margin-bottom:22px;text-transform:uppercase;font-weight:600}
-    .question-text{font-size:clamp(20px,3.8vw,25px);font-weight:500;line-height:1.5;color:#1A1A1A;margin-bottom:44px;transition:opacity .22s ease,transform .22s ease;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:.005em}
+    .question-text{font-size:clamp(20px,3.8vw,25px);font-weight:500;line-height:1.5;color:#1A1A1A;margin-bottom:36px;transition:opacity .22s ease,transform .22s ease;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:.005em}
     .question-text.fade-out{opacity:0;transform:translateY(8px)}
     .options{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
-    .option-btn{display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:12px;cursor:pointer;border:1.5px solid #E8E6E1;background:#FAFAFA;color:#555;font-family:'DM Sans',sans-serif;font-size:14px;transition:all .15s ease;text-align:left;width:100%;font-weight:400}
+    .option-btn{display:flex;align-items:flex-start;gap:16px;padding:15px 18px;border-radius:12px;cursor:pointer;border:1.5px solid #E8E6E1;background:#FAFAFA;color:#555;font-family:'DM Sans',sans-serif;font-size:13px;transition:all .15s ease;text-align:left;width:100%;font-weight:400;line-height:1.5}
     .option-btn:hover{border-color:#1E3A8A;color:#1E3A8A;background:#F0F3FB}
-    .option-btn.selected{border-color:#1E3A8A;background:#EEF1FB;color:#1E3A8A}
-    .radio-circle{width:24px;height:24px;border-radius:50%;flex-shrink:0;border:1.5px solid #CCC;background:#FFF;display:flex;align-items:center;justify-content:center;transition:all .15s ease}
-    .option-btn.selected .radio-circle{border-color:#1E3A8A;background:#1E3A8A}
-    .radio-inner{width:8px;height:8px;border-radius:50%;background:#FFF;display:none}
+    .option-btn.selected{border-width:1.5px;border-style:solid}
+    .radio-circle{width:22px;height:22px;border-radius:50%;flex-shrink:0;border:1.5px solid #CCC;background:#FFF;display:flex;align-items:center;justify-content:center;transition:all .15s ease;margin-top:1px}
+    .option-btn.selected .radio-circle{border-color:currentColor;background:currentColor}
+    .radio-inner{width:7px;height:7px;border-radius:50%;background:#FFF;display:none}
     .option-btn.selected .radio-inner{display:block}
-    .option-btn.selected .option-label{font-weight:600;color:#1E3A8A}
     .back-btn{background:transparent;border:none;color:#AAA;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;padding:0;letter-spacing:.04em;text-transform:uppercase;font-weight:500}
     .back-btn:hover{color:#1E3A8A}
     .input-field{width:100%;background:#FFF;border:1.5px solid #E0DED9;border-radius:10px;padding:14px 18px;color:#1A1A1A;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;margin-bottom:14px;display:block;font-weight:400}
     .input-field:focus{border-color:#1E3A8A}.input-field.err{border-color:#C0392B}
     .input-field::placeholder{color:#BBB}
     .error-msg{font-size:12px;color:#C0392B;margin-top:-10px;margin-bottom:14px;font-family:'DM Sans',sans-serif}
-    .privacy-note{display:flex;align-items:flex-start;gap:10px;margin-top:20px}
-    .privacy-text{font-size:11px;color:#AAA;line-height:1.6;font-family:'DM Sans',sans-serif;font-weight:300}
-    .archetype-hero{background:#1E3A8A;padding:32px 28px;margin-bottom:28px}
-    .archetype-eyebrow{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px;font-weight:600}
-    .archetype-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,6vw,44px);font-weight:600;color:#FFFFFF;line-height:1.1;margin-bottom:6px}
-    .archetype-tagline{font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.65);font-weight:300;letter-spacing:.02em}
-    .score-row{display:flex;align-items:center;gap:24px;margin-top:20px}
+    .privacy-note{font-size:11px;color:#AAA;line-height:1.6;font-family:'DM Sans',sans-serif;font-weight:300;margin-top:16px}
+    .result-header{background:#1E3A8A;padding:32px 0 28px}
+    .result-header .inner{padding-top:0;padding-bottom:0}
+    .rh-eyebrow{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;font-weight:600}
+    .rh-greeting{font-size:13px;color:rgba(255,255,255,.65);font-family:'DM Sans',sans-serif;font-weight:300;margin-bottom:10px;display:none}
+    .rh-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,6vw,48px);font-weight:600;color:#FFFFFF;line-height:1.1;margin-bottom:6px}
+    .rh-tagline{font-size:14px;color:rgba(255,255,255,.65);font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:.01em;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif}
+    .rh-score-row{display:flex;align-items:center;gap:24px;margin-top:22px}
     .score-ring-wrap{position:relative;flex-shrink:0}
     .score-ring-wrap svg{transform:rotate(-90deg)}
     .score-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
     .score-num{font-size:26px;font-weight:700;line-height:1;font-family:'Cormorant Garamond',Georgia,serif;color:#FFFFFF}
-    .score-label{font-size:8px;color:rgba(255,255,255,.5);letter-spacing:.1em;font-family:'DM Sans',sans-serif;margin-top:2px;text-transform:uppercase}
-    .score-status{font-size:13px;color:rgba(255,255,255,.8);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.5;max-width:240px}
-    .divider{height:1px;background:#E8E6E1;margin-bottom:24px}
-    .section-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#1E3A8A;margin-bottom:14px;font-weight:700}
-    .signal-item{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
-    .signal-dot{width:6px;height:6px;border-radius:50%;background:#1E3A8A;flex-shrink:0;margin-top:6px}
-    .signal-text{font-size:14px;color:#333;line-height:1.6;font-family:'DM Sans',sans-serif;font-weight:400}
-    .watch-item{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
-    .watch-dot{width:6px;height:6px;border-radius:50%;background:#C0392B;flex-shrink:0;margin-top:6px}
-    .watch-text{font-size:14px;color:#555;line-height:1.6;font-family:'DM Sans',sans-serif;font-weight:400}
-    .summary-block{font-size:15px;color:#444;line-height:1.85;margin-bottom:24px;font-weight:300}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
-    .signal-card{background:#F5F5F3;border:1px solid #E0DED9;border-radius:12px;padding:18px}
-    .domain-grid{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
-    .domain-row{background:#F5F5F3;border:1px solid #E0DED9;border-radius:10px;padding:14px 16px}
-    .domain-row-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-    .domain-row-name{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#1E3A8A;font-weight:700}
-    .domain-row-status{font-size:9px;font-family:'DM Sans',sans-serif;letter-spacing:.15em;text-transform:uppercase;font-weight:600}
-    .domain-bar-track{height:3px;background:#E8E6E1;border-radius:2px}
-    .domain-bar-fill{height:3px;border-radius:2px;transition:width 1s ease}
-    .next-card{background:#EEF1FB;border-left:4px solid #1E3A8A;border-radius:0 12px 12px 0;padding:22px;margin-bottom:28px}
-    .next-label{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.4em;text-transform:uppercase;margin-bottom:10px;font-weight:700;color:#1E3A8A}
-    .next-text{font-size:13px;color:#333;line-height:1.75;font-family:'DM Sans',sans-serif;font-weight:400}
-    .cta-card{background:#1E3A8A;border-radius:16px;padding:28px;margin-bottom:24px;text-align:center}
-    .cta-title{font-size:22px;font-weight:600;color:#FFFFFF;margin-bottom:10px;font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em}
-    .cta-body{font-size:13px;color:rgba(255,255,255,.7);line-height:1.75;font-family:'DM Sans',sans-serif;margin-bottom:22px;font-weight:300}
-    .cta-btn{display:inline-block;background:#FFFFFF;color:#1E3A8A;border:none;border-radius:50px;padding:14px 32px;font-size:13px;font-weight:700;letter-spacing:.07em;text-decoration:none;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:opacity .15s;cursor:pointer}
-    .cta-btn:hover{opacity:.9}
-    .cta-price{font-size:11px;color:rgba(255,255,255,.4);margin-top:12px;font-family:'DM Sans',sans-serif}
-    .copyright{text-align:center;margin-top:24px;font-size:10px;color:#CCC;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
+    .score-sub{font-size:8px;color:rgba(255,255,255,.5);letter-spacing:.1em;font-family:'DM Sans',sans-serif;margin-top:2px;text-transform:uppercase}
+    .score-desc{font-size:13px;color:rgba(255,255,255,.75);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.55;max-width:260px}
+    .divider{height:1px;background:#E8E6E1;margin:24px 0}
+    .section-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#1E3A8A;margin-bottom:12px;font-weight:700}
+    .truth-text{font-size:15px;color:#444;line-height:1.85;margin-bottom:24px;font-weight:300}
+    .blind-block{border-radius:var(--border-radius-md,8px);padding:16px 18px;margin-bottom:24px}
+    .blind-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+    .blind-text{font-size:14px;line-height:1.6;font-weight:400}
+    .code-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+    .code-num{min-width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px;font-family:'DM Sans',sans-serif}
+    .code-text{font-size:13px;color:#444;line-height:1.6;font-family:'DM Sans',sans-serif}
+    .code-text b{font-weight:500;color:#1A1A1A}
+    .breakdown-item{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .breakdown-label{font-size:12px;color:#888;font-family:'DM Sans',sans-serif;width:120px;flex-shrink:0}
+    .breakdown-track{flex:1;height:4px;background:#E8E6E1;border-radius:2px;overflow:hidden}
+    .breakdown-fill{height:4px;border-radius:2px;transition:width .8s ease}
+    .breakdown-count{font-size:12px;font-weight:500;color:#888;width:18px;text-align:right;flex-shrink:0}
+    .cta-primary{background:#1E3A8A;border-radius:16px;padding:26px;margin-bottom:14px;text-align:center}
+    .cta-primary-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;color:#FFFFFF;margin-bottom:8px;letter-spacing:-.01em}
+    .cta-primary-body{font-size:13px;color:rgba(255,255,255,.7);line-height:1.7;font-family:'DM Sans',sans-serif;margin-bottom:20px;font-weight:300}
+    .cta-primary-btn{display:inline-block;background:#FFFFFF;color:#1E3A8A;border:none;border-radius:50px;padding:13px 28px;font-size:12px;font-weight:700;letter-spacing:.07em;text-decoration:none;font-family:'DM Sans',sans-serif;text-transform:uppercase;transition:opacity .15s;cursor:pointer}
+    .cta-primary-btn:hover{opacity:.9}
+    .cta-price{font-size:11px;color:rgba(255,255,255,.4);margin-top:10px;font-family:'DM Sans',sans-serif}
+    .cta-secondary{background:#F5F5F3;border:1px solid #E0DED9;border-radius:14px;padding:22px 24px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .cta-sec-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#1E3A8A;font-weight:700;margin-bottom:5px}
+    .cta-sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;font-weight:600;color:#1A1A1A;margin-bottom:4px}
+    .cta-sec-body{font-size:12px;color:#666;font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.5}
+    .cta-sec-btn{display:inline-block;background:#1E3A8A;color:#FFFFFF;border-radius:50px;padding:11px 22px;font-size:11px;font-weight:700;letter-spacing:.06em;text-decoration:none;font-family:'DM Sans',sans-serif;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
     .disclaimer-short{font-size:10px;color:#BBB;line-height:1.65;font-family:'DM Sans',sans-serif;font-weight:300;text-align:center;margin-top:14px;padding:0 4px}
     .disclaimer-block{background:#F5F5F3;border:1px solid #E0DED9;border-radius:10px;padding:16px 18px;margin-top:20px;margin-bottom:4px}
     .disclaimer-block-label{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:#CCC;margin-bottom:8px;font-weight:600}
     .disclaimer-block-text{font-size:11px;color:#AAA;line-height:1.7;font-family:'DM Sans',sans-serif;font-weight:300}
-    @media(max-width:600px){.two-col{grid-template-columns:1fr}.score-row{gap:16px}}
+    .copyright{text-align:center;margin-top:20px;font-size:10px;color:#CCC;font-family:'DM Sans',sans-serif;letter-spacing:.05em}
+    @media(max-width:600px){.rh-score-row{gap:16px}.cta-secondary{flex-direction:column}}
   </style>
 </head>
 <body>
-
+ 
 <!-- INTRO -->
 <div id="screen-intro" class="screen active">
   <div class="top-bar"></div>
   <div class="inner">
     <div class="eyebrow">BlueChip People Strategies</div>
-    <h1 class="headline">The<br><span class="blue">Workplace</span><br>Read</h1>
+    <h1 class="headline">The<br><span class="blue">Promoted</span><br>Playbook</h1>
     <div class="blue-rule"></div>
-    <p class="body-text">20 questions. 5 minutes. A clear read on what's actually happening at work — and what to do about it.</p>
+    <p class="body-text">8 questions. 5 minutes. Find out what kind of supervisor you actually are — and get your personalized cheat code.</p>
     <div class="card">
       <div class="card-label">You'll discover</div>
-      <div class="fi"><div class="fd">◆</div><div class="ft">Your workplace situation archetype</div></div>
-      <div class="fi"><div class="fd">◆</div><div class="ft">The specific signals showing up in your results</div></div>
-      <div class="fi"><div class="fd">◆</div><div class="ft">What to watch for and where the real pressure is</div></div>
-      <div class="fi"><div class="fd">◆</div><div class="ft">A clear picture of what to do next</div></div>
+      <div class="fi"><div class="fd">◆</div><div class="ft">Your supervisor archetype</div></div>
+      <div class="fi"><div class="fd">◆</div><div class="ft">The blind spot most likely to derail you</div></div>
+      <div class="fi"><div class="fd">◆</div><div class="ft">Your personalized 5-move supervisor cheat code</div></div>
+      <div class="fi"><div class="fd">◆</div><div class="ft">What to do next — including how to go deeper</div></div>
     </div>
-    <p style="font-size:13px;color:#AAA;margin-bottom:24px;line-height:1.7;font-family:'DM Sans',sans-serif;font-weight:300">Answer based on your <em style="color:#888">current reality</em> — not how you wish things were.</p>
-    <button class="btn-blue" onclick="startAssessment()">Get My Workplace Read →</button>
-    <div class="meta-text">5 dimensions · 20 questions · Free</div>
-    <div class="disclaimer-short">This tool is for informational and self-reflection purposes only. It does not constitute legal, HR, or professional advice. Completing this assessment does not create a professional-client relationship. If your situation may involve legal rights or formal processes, please consult qualified legal counsel.</div>
+    <p style="font-size:13px;color:#AAA;margin-bottom:28px;line-height:1.7;font-family:'DM Sans',sans-serif;font-weight:300">Answer based on how you <em style="color:#888">actually</em> behave — not how you want to.</p>
+    <button class="btn-blue" onclick="startAssessment()">Take the Quiz →</button>
+    <div class="meta-text">4 archetypes · 8 questions · Free</div>
+    <div class="disclaimer-short">This assessment is for informational and self-reflection purposes only. It does not constitute professional HR or management advice. Completing this tool does not create a professional-client relationship with BlueChip People Strategies.</div>
   </div>
 </div>
-
+ 
 <!-- ASSESSMENT -->
 <div id="screen-assessment" class="screen">
   <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
   <div class="inner" style="padding-top:48px">
     <div class="assess-header">
-      <div class="assess-brand">The Workplace Read</div>
-      <div class="assess-count"><strong id="q-num">1</strong> / 20</div>
+      <div class="assess-brand">The Promoted Playbook</div>
+      <div class="assess-count"><strong id="q-num">1</strong> / 8</div>
     </div>
-    <div class="domain-badge" id="domain-badge"></div>
     <div class="question-text" id="question-text"></div>
     <div class="options" id="options-container"></div>
-    <button class="back-btn" id="back-btn" onclick="prevQuestion()" style="display:none">← Previous</button>
+    <button class="back-btn" id="back-btn" onclick="prevQuestion()" style="display:none">← Back</button>
   </div>
 </div>
-
+ 
 <!-- GATE -->
 <div id="screen-gate" class="screen">
   <div class="top-bar"></div>
   <div class="inner">
     <div class="eyebrow">BlueChip People Strategies</div>
-    <h2 class="headline" style="font-size:clamp(34px,6vw,48px)">Your Workplace<br><span class="blue">Read is ready.</span></h2>
+    <h2 class="headline" style="font-size:clamp(34px,6vw,48px)">Your results<br><span class="blue">are ready.</span></h2>
     <div class="blue-rule"></div>
-    <p class="body-text">Enter your details to unlock your archetype, situation signals, and what your results actually mean for where you are right now.</p>
+    <p class="body-text">Enter your details to unlock your archetype, blind spot, and personalized cheat code.</p>
     <input type="text" class="input-field" id="input-name" placeholder="Your name" />
-    <input type="text" class="input-field" id="input-role" placeholder="Your role (optional)" />
+    <input type="text" class="input-field" id="input-role" placeholder="Your role or title (optional)" />
     <input type="email" class="input-field" id="input-email" placeholder="Email address" />
     <div class="error-msg" id="email-error" style="display:none">Please enter a valid email address.</div>
     <div class="error-msg" id="submit-error" style="display:none">Something went wrong. Please try again.</div>
-    <button class="btn-blue" id="gate-btn" onclick="submitEmail()">View My Results →</button>
-    <div class="privacy-note">
-      <div class="privacy-text">Your information is kept private. BlueChip People Strategies does not sell or share your data.</div>
-    </div>
-    <div class="disclaimer-short" style="text-align:left;margin-top:16px">This tool is for informational purposes only and does not constitute legal, HR, or professional advice of any kind. No professional-client relationship is formed by completing this assessment or submitting your information.</div>
+    <button class="btn-blue" id="gate-btn" onclick="submitGate()">See My Results →</button>
+    <div class="privacy-note">No spam. BlueChip People Strategies will occasionally share leadership and people management insights with you. Your data is never sold or shared.</div>
+    <div class="disclaimer-short" style="text-align:left;margin-top:12px">This tool is for informational purposes only and does not constitute professional advice. No professional-client relationship is formed by submitting your information.</div>
   </div>
 </div>
-
+ 
 <!-- RESULTS -->
 <div id="screen-result" class="screen">
-  <div class="archetype-hero" id="archetype-hero">
-    <div class="inner" style="padding-top:32px;padding-bottom:0">
-      <div class="archetype-eyebrow">Your workplace situation</div>
-      <div id="result-greeting" style="display:none;font-size:13px;color:rgba(255,255,255,.6);font-family:'DM Sans',sans-serif;margin-bottom:10px;font-weight:300"></div>
-      <div class="archetype-name" id="archetype-name"></div>
-      <div class="archetype-tagline" id="archetype-tagline"></div>
-      <div class="score-row">
+  <div class="result-header">
+    <div class="inner">
+      <div class="rh-eyebrow">Your supervisor type</div>
+      <div class="rh-greeting" id="rh-greeting"></div>
+      <div class="rh-name" id="rh-name"></div>
+      <div class="rh-tagline" id="rh-tagline"></div>
+      <div class="rh-score-row">
         <div class="score-ring-wrap">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="7"/>
-            <circle id="score-arc" cx="50" cy="50" r="42" fill="none" stroke="#FFFFFF" stroke-width="7"
-              stroke-dasharray="263.9" stroke-dashoffset="263.9"
-              stroke-linecap="round" style="transition:stroke-dashoffset 1.2s ease"/>
+          <svg width="96" height="96" viewBox="0 0 96 96">
+            <circle cx="48" cy="48" r="40" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="7"/>
+            <circle id="score-arc" cx="48" cy="48" r="40" fill="none" stroke="#FFFFFF" stroke-width="7"
+              stroke-dasharray="251.3" stroke-dashoffset="251.3"
+              stroke-linecap="round" style="transition:stroke-dashoffset 1.1s ease"/>
           </svg>
           <div class="score-overlay">
-            <div class="score-num" id="score-display">--</div>
-            <div class="score-label">/ 100</div>
+            <div class="score-num" id="score-num">—</div>
+            <div class="score-sub">of 8</div>
           </div>
         </div>
-        <div class="score-status" id="score-status"></div>
+        <div class="score-desc" id="score-desc"></div>
       </div>
     </div>
   </div>
-
+ 
   <div class="inner" style="padding-top:8px">
     <div class="divider"></div>
-    <div class="summary-block" id="archetype-summary"></div>
-
-    <div class="two-col">
-      <div class="signal-card">
-        <div class="section-label">What's showing up</div>
-        <div id="signals-list"></div>
+ 
+    <div class="section-label">The honest truth</div>
+    <div class="truth-text" id="truth-text"></div>
+ 
+    <div class="blind-block" id="blind-block">
+      <div class="blind-label" id="blind-label">Your blind spot</div>
+      <div class="blind-text" id="blind-text"></div>
+    </div>
+ 
+    <div class="section-label">Your supervisor cheat code</div>
+    <div style="margin-bottom:28px" id="code-list"></div>
+ 
+    <div class="section-label">How your answers broke down</div>
+    <div style="margin-bottom:28px" id="breakdown-list"></div>
+ 
+    <div class="cta-primary">
+      <div class="cta-primary-title">Go deeper with The Promoted Playbook.</div>
+      <div class="cta-primary-body">The complete field guide for first-time supervisors — six frameworks, the full cheat code for every archetype, and a 30-day action plan. Built for people who want to get leadership right from the start.</div>
+      <a class="cta-primary-btn" id="gumroad-btn" href="https://bluechippeople.gumroad.com" target="_blank" rel="noreferrer">Get The Promoted Playbook →</a>
+      <div class="cta-price">$[PRICE] CAD · Instant download · Gumroad</div>
+    </div>
+ 
+    <div class="cta-secondary">
+      <div>
+        <div class="cta-sec-label">Want to talk it through?</div>
+        <div class="cta-sec-title">Employer Clarity Call</div>
+        <div class="cta-sec-body">A one-time 45-minute conversation with a senior HR advisor. Bring your situation — we'll tell you what we actually think.</div>
       </div>
-      <div class="signal-card">
-        <div class="section-label" style="color:#C0392B">What to watch for</div>
-        <div id="watchouts-list"></div>
-      </div>
+      <a class="cta-sec-btn" href="https://buy.stripe.com/4gM00i94Fett4vxal7co00b" target="_blank" rel="noreferrer">Book a Call →</a>
     </div>
-
-    <div class="section-label">Dimension breakdown</div>
-    <div class="domain-grid" id="domain-grid"></div>
-
-    <div class="next-card">
-      <div class="next-label">Recommended next step</div>
-      <div class="next-text" id="next-text"></div>
-    </div>
-
-    <div class="cta-card">
-      <div class="cta-title">Get a straight read on your situation.</div>
-      <div class="cta-body">The Employee Clarity Call is a one-time 45-minute confidential conversation. You talk. We listen. We tell you honestly what we see — your options, your rights, and what a realistic path forward looks like. No judgment. No agenda. Just clarity.</div>
-      <a class="cta-btn" href="https://buy.stripe.com/fZu7sK0y98551jl2SFco005" target="_blank" rel="noreferrer">Book Your Employee Clarity Call →</a>
-      <div class="cta-price">$250 CAD · 45 minutes · Confidential</div>
-    </div>
-
-    <button class="btn-outline" onclick="restart()">Retake the assessment</button>
+ 
+    <button class="btn-outline" onclick="restart()">Retake the quiz</button>
+ 
     <div class="disclaimer-block">
-      <div class="disclaimer-block-label">Important notice</div>
-      <div class="disclaimer-block-text">This assessment is for informational and self-reflection purposes only. Results are generated entirely from self-reported responses and do not constitute legal advice, HR advice, or professional advice of any kind. The archetype, scores, and insights produced by this tool do not represent a finding of fact, a legal determination, or a professional opinion about your specific workplace situation. No employment, professional, or client relationship of any kind is created between you and BlueChip People Strategies by completing this assessment or submitting your information. BlueChip People Strategies provides HR and leadership advisory services only and does not provide legal advice or legal representation. Nothing in these results should be interpreted as confirming that any legal violation, wrongdoing, or actionable conduct has occurred. If your situation may involve legal rights, formal complaints, potential litigation, or regulatory processes, please consult qualified legal counsel independently. These results should not be used as documentation, evidence, or support in any legal, HR, regulatory, or disciplinary proceeding.</div>
+      <div class="disclaimer-block-label">Disclaimer</div>
+      <div class="disclaimer-block-text">This assessment is for informational and self-reflection purposes only. Results are generated from self-reported responses and do not constitute professional HR, management, or legal advice of any kind. The archetype and insights produced by this tool are not a formal evaluation of your supervisory capabilities or professional conduct. No professional-client relationship is created between you and BlueChip People Strategies by completing this assessment. BlueChip People Strategies provides HR and leadership advisory services only and does not provide legal advice or legal representation.</div>
     </div>
     <div class="copyright">© BlueChip People Strategies · bluechip-people-strategies.com</div>
   </div>
 </div>
-
+ 
 <script>
-const FORMSPREE='https://formspree.io/f/mwvwyvry';
-
-const DOMAINS=[
-  {id:'management', label:'Management & Leadership'},
-  {id:'conduct',    label:'Conduct & Fairness'},
-  {id:'workload',   label:'Workload & Sustainability'},
-  {id:'career',     label:'Career & Development'},
-  {id:'safety',     label:'Psychological Safety & Respect'},
-];
-
-const DRAW_PER_DOMAIN=4; // 4 × 5 domains = 20 questions per session
-
-// ── QUESTION BANK (35 questions · 7 per domain) ───────────────────────────────
-const QUESTION_BANK=[
-  // MANAGEMENT & LEADERSHIP
-  {id:'m1',domain:'management',text:'My manager treats me with basic respect and professionalism in our day-to-day interactions.'},
-  {id:'m2',domain:'management',text:'I receive feedback from my manager that is honest, specific, and actually helps me do my job better.'},
-  {id:'m3',domain:'management',text:'My manager advocates for me and my interests — not just when it is easy or convenient.'},
-  {id:'m4',domain:'management',text:'When I raise a concern with my manager, I feel genuinely heard and taken seriously.'},
-  {id:'m5',domain:'management',text:"My manager's expectations of me are clear and applied consistently over time."},
-  {id:'m6',domain:'management',text:'My manager creates conditions for me to succeed — they remove obstacles rather than create them.'},
-  {id:'m7',domain:'management',text:'If I were underperforming, I trust that my manager would address it with me directly — not work around me.'},
-  // CONDUCT & FAIRNESS
-  {id:'c1',domain:'conduct',text:'People in this organization are treated fairly regardless of who they are or who they know.'},
-  {id:'c2',domain:'conduct',text:'If something inappropriate happened at work, I trust it would be addressed properly and in good faith.'},
-  {id:'c3',domain:'conduct',text:'I have not experienced or witnessed conduct that made me feel unsafe, excluded, or unwelcome.'},
-  {id:'c4',domain:'conduct',text:'Processes here — performance reviews, promotions, recognition — feel fair and applied consistently.'},
-  {id:'c5',domain:'conduct',text:'When people make mistakes, accountability is applied the same way regardless of seniority or relationships.'},
-  {id:'c6',domain:'conduct',text:'I have not experienced retaliation — real or implied — for raising a concern or speaking up.'},
-  {id:'c7',domain:'conduct',text:'The standards and expectations applied to me are the same ones applied to my peers.'},
-  // WORKLOAD & SUSTAINABILITY
-  {id:'w1',domain:'workload',text:'My workload is manageable — I am not regularly pushed beyond reasonable limits to keep up.'},
-  {id:'w2',domain:'workload',text:'The expectations placed on me are realistic given the time, tools, and resources I actually have.'},
-  {id:'w3',domain:'workload',text:'I am able to disconnect and genuinely recover outside of work hours without fearing consequences.'},
-  {id:'w4',domain:'workload',text:'I can sustain my current pace for the foreseeable future without burning out.'},
-  {id:'w5',domain:'workload',text:'When I am overloaded, there is a realistic way to raise it and get meaningful relief.'},
-  {id:'w6',domain:'workload',text:'My role is scoped clearly enough that I know what is — and is not — expected of me.'},
-  {id:'w7',domain:'workload',text:'New responsibilities are not continuously added to my workload without something being adjusted to accommodate them.'},
-  // CAREER & DEVELOPMENT
-  {id:'d1',domain:'career',text:'I can see a realistic path forward for my career within this organization.'},
-  {id:'d2',domain:'career',text:'My work and contributions are recognized and valued by the people who matter here.'},
-  {id:'d3',domain:'career',text:'This organization invests meaningfully in my growth and professional development.'},
-  {id:'d4',domain:'career',text:'My skills and capabilities are being used well — I am not being underutilized or held back.'},
-  {id:'d5',domain:'career',text:'If a comparable opportunity came up elsewhere, I would genuinely consider staying here.'},
-  {id:'d6',domain:'career',text:'The work I do here connects to something I find meaningful or worth investing in.'},
-  {id:'d7',domain:'career',text:'I am learning and growing in ways that will serve my career — not just this specific role.'},
-  // PSYCHOLOGICAL SAFETY & RESPECT
-  {id:'s1',domain:'safety',text:'I feel comfortable being myself at work — I do not have to constantly manage how I am perceived.'},
-  {id:'s2',domain:'safety',text:'My ideas and contributions are taken seriously in team and group settings.'},
-  {id:'s3',domain:'safety',text:'I am not excluded from information, conversations, or decisions that directly affect my work.'},
-  {id:'s4',domain:'safety',text:'When I make mistakes, they are treated as learning opportunities — not collected and used against me.'},
-  {id:'s5',domain:'safety',text:'The way I am treated at work is consistent — it does not shift based on mood, politics, or who is watching.'},
-  {id:'s6',domain:'safety',text:'I do not feel like I am being set up to fail or closely watched for problems.'},
-  {id:'s7',domain:'safety',text:'I can respectfully disagree with my manager or colleagues without it affecting how I am treated afterward.'},
-];
-
-// ── ARCHETYPES ─────────────────────────────────────────────────────────────────
-// weights: how strongly each domain signals this archetype (must sum to 1.0)
-// scoring uses domain GAPS (how bad each domain is) weighted per archetype
-const ARCHETYPES=[
-  {
-    id:'overlooked',
-    name:'The Overlooked',
-    tagline:'Undervalued. Invisible. Not growing.',
-    weights:{management:0.28,conduct:0.08,workload:0.07,career:0.47,safety:0.10},
-    summary:"You are doing the work and showing up — and it is largely going unnoticed. The gap is not performance. It is visibility, investment, and career oxygen. This erodes confidence and commitment in ways that are hard to name but easy to feel.",
-    signals:["Contributions are not being recognized by the people who matter","Limited meaningful investment in your growth or development","No clear path forward — or a path that keeps shifting without explanation"],
-    watchouts:["Normalizing being underinvested in as if it's just how things work","Mistaking loyalty for a long-term career strategy","Waiting for recognition that is not coming without a direct conversation"],
-    next:"You need a clear picture of what you are actually dealing with — and what your realistic options are. That starts with getting an honest read on your situation.",
-    score_label:"Worth addressing"
-  },
-  {
-    id:'overloaded',
-    name:'The Overloaded',
-    tagline:'Stretched. Depleted. Running on empty.',
-    weights:{management:0.10,conduct:0.05,workload:0.58,career:0.17,safety:0.10},
-    summary:"The volume of what is being asked of you has exceeded what is reasonable — and possibly what is sustainable. Whether this is structural, intentional, or a rough patch matters enormously. But the physical and cognitive cost is real either way, and it compounds faster than most people expect.",
-    signals:["Workload consistently exceeds what can be done well in normal hours","Expectations keep expanding without resources, timelines, or scope adjusting","Recovery time outside of work has effectively disappeared"],
-    watchouts:["Treating unsustainability as a personal failing rather than a system problem","Not naming the problem clearly enough for leadership to be able to act on it","Waiting until you have nothing left before doing something about it"],
-    next:"Before you can solve this, you need to know if it is solvable where you are — or if it is structural. Getting an outside perspective is the fastest way to that clarity.",
-    score_label:"Needs attention"
-  },
-  {
-    id:'managed_out',
-    name:'The Managed Out',
-    tagline:'Targeted. Undermined. Not imagining it.',
-    weights:{management:0.35,conduct:0.28,workload:0.06,career:0.12,safety:0.19},
-    summary:"Something has shifted in how you are being treated — and it does not feel accidental. Whether it is a manager who has turned on you, processes designed to document failure rather than support improvement, or treatment others are not receiving — the pattern is there. And it is worth naming.",
-    signals:["Treatment from management has noticeably changed — and not for the better","Performance processes feel less like support and more like documentation","Standards or responses that do not apply to others are being applied to you"],
-    watchouts:["Not documenting events carefully and in real time — start now","Being made to doubt your own read of the situation when the pattern is real","Making reactive moves without understanding your rights and options first"],
-    next:"If this is what it looks like, you need someone who can tell you clearly what you are looking at — and what it means for your options. That conversation needs to happen soon.",
-    score_label:"Requires immediate action"
-  },
-  {
-    id:'checked_out',
-    name:'The Checked Out',
-    tagline:'Disengaged. Stuck. Going through the motions.',
-    weights:{management:0.10,conduct:0.08,workload:0.23,career:0.44,safety:0.15},
-    summary:"You are still showing up — but the connection to the work, the organization, or the future here has faded. This builds gradually: unmet expectations, small disappointments, a growing sense that this place does not have what you need. It is one of the harder situations to name because nothing is obviously wrong.",
-    signals:["The work no longer feels meaningful or connected to anything you care about","Recognition, growth, and investment in your future here have dried up","You are staying more out of inertia or habit than out of genuine reasons to be here"],
-    watchouts:["Confusing comfort and familiarity with actual fit","Staying because leaving feels hard rather than because staying genuinely makes sense","Letting the situation drift until the decision effectively gets made for you"],
-    next:"The question is not just whether to stay or go — it is understanding what is driving the disengagement and what you can actually do about it. That is worth talking through.",
-    score_label:"Worth addressing"
-  },
-  {
-    id:'gaslit',
-    name:'The Gaslit',
-    tagline:'Confused. Destabilized. Doubting yourself.',
-    weights:{management:0.11,conduct:0.24,workload:0.05,career:0.08,safety:0.52},
-    summary:"Something about how you are being treated does not add up — and the environment may be actively working against your ability to trust your own read of it. Inconsistent treatment, hostile dynamics, exclusion, withheld information, or a pattern of being positioned for failure. It is disorienting by design.",
-    signals:["Treatment feels inconsistent, confusing, or deliberately undermining","You have been excluded from information, conversations, or spaces that affect your work","You find yourself questioning your own memory, judgment, or perception of events"],
-    watchouts:["Doubting yourself when the pattern is real and documented","Waiting until things become serious enough before starting to document them","Trying to manage this situation alone without any outside perspective"],
-    next:"If something feels wrong, it is worth getting a clear, experienced read on what you are actually looking at — before it escalates or before you respond in a way that compromises your position.",
-    score_label:"Requires immediate action"
-  },
-];
-
-const LABELS=['Strongly Disagree','Disagree','Neutral','Agree','Strongly Agree'];
-const DOMAIN_IDS=['management','conduct','workload','career','safety'];
-const STATUS_COLORS={stable:'#2D7A4F',pressure:'#B8650A',critical:'#C0392B'};
-
-let current=0,answers={},finalScore=null,domainScores={},userName='',archetypeId='',activeQuestions=[];
-
-// ── DRAW FUNCTIONS ────────────────────────────────────────────────────────────
-function shuffle(arr){
-  const a=[...arr];
-  for(let i=a.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [a[i],a[j]]=[a[j],a[i]];
-  }
-  return a;
-}
-
-function drawProportional(bank,perDomain){
-  return DOMAIN_IDS.flatMap(domain=>{
-    const pool=bank.filter(q=>q.domain===domain);
-    return shuffle(pool).slice(0,perDomain);
-  });
-}
+// ── UPDATE THESE BEFORE GOING LIVE ───────────────────────────────────────────
+const FORMSPREE = 'https://formspree.io/f/XXXXXXXX'; // create new Formspree form → replace
+const GUMROAD_URL = 'https://bluechippeople.gumroad.com/l/XXXXXXXX'; // set after creating product
+const PLAYBOOK_PRICE = '19'; // update to match Gumroad price
 // ─────────────────────────────────────────────────────────────────────────────
-
+ 
+const DRAW_COUNT = 8;
+ 
+const QUESTION_BANK = [
+  {id:1,  text:"A team member comes to you stuck on a problem. Your first move?", opts:[
+    {label:"Fix it. What else would I do?",                                           key:"fixer"},
+    {label:"Ask how they're feeling about it before anything else",                    key:"diplomat"},
+    {label:"Send them back to figure it out — growth happens in discomfort",           key:"ghost"},
+    {label:"Walk them through the standard operating procedure",                       key:"policy"}]},
+  {id:2,  text:"A team member is clearly underperforming. Your first instinct is...", opts:[
+    {label:"Take something off their plate so they don't fail visibly",                key:"fixer"},
+    {label:"A gentle check-in — maybe they'll read between the lines",                 key:"diplomat"},
+    {label:"Give them space — maybe they just need to find their footing",             key:"ghost"},
+    {label:"Document it and schedule a formal performance review",                     key:"policy"}]},
+  {id:3,  text:"Your team submits work that's good — but not quite how you'd do it.", opts:[
+    {label:"Quietly tighten it up before it goes out",                                 key:"fixer"},
+    {label:"Say 'great job' — you don't want to deflate them",                         key:"diplomat"},
+    {label:"Send it. Not your job to rewrite their work.",                             key:"ghost"},
+    {label:"Return it with tracked changes and a note referencing the style guide",    key:"policy"}]},
+  {id:4,  text:"Two team members are in conflict. You...", opts:[
+    {label:"Step in immediately — they clearly need someone to resolve this",          key:"fixer"},
+    {label:"Pull each aside separately and smooth everyone's feelings",                key:"diplomat"},
+    {label:"Let them sort it out — they're adults",                                    key:"ghost"},
+    {label:"Remind both of the conflict resolution process in the employee handbook",  key:"policy"}]},
+  {id:5,  text:"A strong performer asks you for honest feedback. You...", opts:[
+    {label:"Rewrite part of their work so they can actually see the bar",              key:"fixer"},
+    {label:"Open with five positives before nervously mentioning one area to improve", key:"diplomat"},
+    {label:"'Looks solid to me' — they don't need hand-holding",                       key:"ghost"},
+    {label:"Score it against the competency framework and share the rubric",           key:"policy"}]},
+  {id:6,  text:"Your team seems disengaged lately. Your read on it?", opts:[
+    {label:"They need more challenging work — I'll pull them into my projects",        key:"fixer"},
+    {label:"There's unresolved tension I've probably been avoiding",                   key:"diplomat"},
+    {label:"It's a phase. Teams go through cycles. They'll come around.",              key:"ghost"},
+    {label:"Our KPIs and expectations probably aren't documented clearly enough",      key:"policy"}]},
+  {id:7,  text:"End of your first month as supervisor. How do you feel?", opts:[
+    {label:"Useful — I've helped the team solve a lot of problems already",            key:"fixer"},
+    {label:"Connected — I've made sure everyone feels good",                           key:"diplomat"},
+    {label:"Hands-off — I've been careful not to hover or micromanage",               key:"ghost"},
+    {label:"Prepared — processes, expectations, and standards are documented",         key:"policy"}]},
+  {id:8,  text:"Be honest. How would your team describe you?", opts:[
+    {label:"'Always there to bail us out. Whether we asked or not.'",                  key:"fixer"},
+    {label:"'So supportive. Has literally never said anything critical, ever.'",       key:"diplomat"},
+    {label:"'Great boss. We think. We don't actually see them that much.'",            key:"ghost"},
+    {label:"'Thorough. Consistent. Very... policy-oriented.'",                         key:"policy"}]},
+  {id:9,  text:"You need to delegate an important project. You...", opts:[
+    {label:"Brief them, then check in daily to make sure it stays on track",           key:"fixer"},
+    {label:"Ask who feels most comfortable taking it on",                              key:"diplomat"},
+    {label:"Assign it and trust they'll come to you if they need anything",            key:"ghost"},
+    {label:"Send a detailed brief with milestones and sign-off checkpoints",           key:"policy"}]},
+  {id:10, text:"You made a call that turned out to be wrong. You...", opts:[
+    {label:"Fix the damage yourself before it becomes a bigger issue",                 key:"fixer"},
+    {label:"Apologize to the team and make sure everyone knows you feel bad about it", key:"diplomat"},
+    {label:"Move on — mistakes happen, no point dwelling on it",                       key:"ghost"},
+    {label:"Review the process that led to the decision and update the protocol",      key:"policy"}]},
+  {id:11, text:"A new team member joins. Your onboarding approach is...", opts:[
+    {label:"Walk them through everything yourself — nobody does it better",            key:"fixer"},
+    {label:"Focus on making them feel welcome and comfortable above all else",         key:"diplomat"},
+    {label:"Give them the lay of the land and let them find their feet",               key:"ghost"},
+    {label:"Hand them the onboarding checklist and schedule their 30/60/90 reviews",  key:"policy"}]},
+  {id:12, text:"A top performer tells you they're bored and wants more responsibility.", opts:[
+    {label:"Pull them into some of your own work so they stay challenged",             key:"fixer"},
+    {label:"Acknowledge how they're feeling and promise to think about it",            key:"diplomat"},
+    {label:"Tell them to identify a project they want to own and bring it to you",    key:"ghost"},
+    {label:"Schedule a formal development conversation and build a growth plan",       key:"policy"}]},
+  {id:13, text:"Your team meeting runs long and you're out of time. You...", opts:[
+    {label:"Power through — the items are important and everyone can adjust",          key:"fixer"},
+    {label:"Check in with how everyone's feeling before you wrap",                    key:"diplomat"},
+    {label:"Call it — people have other things to do",                                key:"ghost"},
+    {label:"Note the unfinished items and formally carry them to the next agenda",    key:"policy"}]},
+  {id:14, text:"You overhear two team members venting about a process they hate. You...", opts:[
+    {label:"Step in and offer to fix the process right then and there",                key:"fixer"},
+    {label:"Check in with both of them later to make sure morale is okay",            key:"diplomat"},
+    {label:"Leave it — venting is healthy, they'll work through it",                  key:"ghost"},
+    {label:"Flag it as a standing item for the next process review",                  key:"policy"}]},
+  {id:15, text:"Your boss asks how your team is performing. You...", opts:[
+    {label:"Walk through everything you've personally helped resolve this week",       key:"fixer"},
+    {label:"Talk about team morale, the culture you're building, how everyone's getting along", key:"diplomat"},
+    {label:"'Good, I think — I've been giving them space to run with things'",         key:"ghost"},
+    {label:"Pull up the metrics and walk through the numbers",                         key:"policy"}]},
+];
+ 
+const ARCHETYPES = {
+  fixer: {
+    name:"The Fixer",
+    tagline:"You came, you saw, you solved it. Again. And again. And again.",
+    truth:"You are the most capable person in the room and your team knows it — which is exactly the problem. Every time you jump in, you send a quiet signal that you don't believe they can handle it. Your team isn't growing. You're not leading. You're doing their job with a different title.",
+    blind:"You've built a team that's learned to wait for you.",
+    code:[
+      {b:"Ask first, fix never.",         t:"When someone brings you a problem, say 'What have you tried?' before you say anything else. Every single time."},
+      {b:"The 24-hour rule.",             t:"Let a problem sit with your team for a full day before you touch it. Discomfort is not a signal to intervene."},
+      {b:"Coach, don't correct.",         t:"When you catch yourself about to fix something, stop. Turn it into a question: 'What would you do differently?'"},
+      {b:"Measure the right thing.",      t:"Track how many problems your team solved without you. That number going up is the job."},
+      {b:"Make yourself unnecessary.",    t:"That's not a threat — it's the entire point. The team that doesn't need you is the team you built right."}],
+    nBg:"#B5D4F4",nTc:"#0C447C",bBg:"#FCEBEB",bTc:"#791F1F",bLc:"#A32D2D",arc:"#378ADD"
+  },
+  diplomat: {
+    name:"The Diplomat",
+    tagline:"Beloved by all. Feared by no one. Which is exactly the problem.",
+    truth:"You are the warmest supervisor in the building and your team loves you for it. But warmth without direction is just a good time. You've confused psychological safety with conflict avoidance. Your team doesn't know where they stand because you've never been willing to tell them.",
+    blind:"Your kindness is costing your lowest performers the truth they need — and your top performers the honesty they deserve.",
+    code:[
+      {b:"Separate the relationship from the feedback.", t:"Hard feedback doesn't damage trust. Vague, indefinitely-deferred feedback does."},
+      {b:"Use SBI every time.",            t:"Situation, Behaviour, Impact. Specificity removes the sting and delivers the message. Practice until it's reflex."},
+      {b:"Name the standard before the gap.", t:"'Here's what great looks like. Here's where you are.' That's coaching, not criticism."},
+      {b:"Ask yourself one weekly question.", t:"'Is there anything I'm not saying that I should be?' If yes — book the conversation before Friday."},
+      {b:"The kindest thing is the truth, early.", t:"A hard conversation at month one saves a formal process at month six. Your team deserves the early version."}],
+    nBg:"#9FE1CB",nTc:"#085041",bBg:"#FAEEDA",bTc:"#633806",bLc:"#854F0B",arc:"#1D9E75"
+  },
+  ghost: {
+    name:"The Ghost",
+    tagline:"You believe in your team. Your team believes you've forgotten them.",
+    truth:"Your intentions are pure. You call it trust. You call it autonomy. Your team calls it flying blind. There's a meaningful difference between empowering your people and disappearing on them. Autonomy without direction isn't leadership — it's abandonment with better PR.",
+    blind:"Your team is making decisions they shouldn't have to make because you're not there to make them.",
+    code:[
+      {b:"Show up on a schedule, not just when things break.", t:"Consistent presence builds more trust than availability in a crisis. Be predictable."},
+      {b:"Clarity is not micromanagement.", t:"Telling someone what success looks like isn't hovering — it's your actual job."},
+      {b:"Never cancel a 1:1.",            t:"Your team's 30 minutes is not a casualty of your busy week. Non-negotiable."},
+      {b:"Ask the question.",              t:"'What do you need more direction on right now?' Ask your whole team. The answers will surprise you."},
+      {b:"Remove obstacles. Set direction. Do both.", t:"Not staying out of the way — being in the right way at the right time."}],
+    nBg:"#CECBF6",nTc:"#3C3489",bBg:"#FAEEDA",bTc:"#633806",bLc:"#854F0B",arc:"#7F77DD"
+  },
+  policy: {
+    name:"The Policy Manual",
+    tagline:"Fair, consistent, and somehow still losing good people.",
+    truth:"You run a tight ship. Everything is documented, every process is followed, every decision is defensible. And yet your best people keep leaving and you can't figure out why. People don't leave policies. They leave managers who treated them like a number inside a compliant process.",
+    blind:"You've optimized so hard for fairness that you've squeezed out the humanity.",
+    code:[
+      {b:"Human answer before HR answer.", t:"Next time you're about to cite a policy, pause: is there a person-first response you could give instead?"},
+      {b:"Flex your approach by individual.", t:"Equity isn't sameness. Different people need to be led differently. Consistent standards, varied approach."},
+      {b:"One unstructured conversation per week.", t:"No agenda. No performance talk. Just a genuine check-in with one direct report. Schedule it like a meeting."},
+      {b:"'What's going on?' before 'What's the status?'", t:"When someone is struggling, start with the person. The task can wait one more question."},
+      {b:"People first, employees second.", t:"You can have high standards and be a human being. In fact, the two go better together than you think."}],
+    nBg:"#FAC775",nTc:"#412402",bBg:"#FCEBEB",bTc:"#791F1F",bLc:"#A32D2D",arc:"#BA7517"
+  }
+};
+ 
+const ARCHETYPE_LABELS = {
+  fixer:"The Fixer",diplomat:"The Diplomat",ghost:"The Ghost",policy:"The Policy Manual"
+};
+ 
+let current=0, answers={}, scores={fixer:0,diplomat:0,ghost:0,policy:0}, userName='', activeQs=[], shuffledOpts=[];
+ 
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+ 
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+id).classList.add('active');window.scrollTo(0,0);}
-
+ 
 function startAssessment(){
-  activeQuestions=drawProportional(QUESTION_BANK,DRAW_PER_DOMAIN);
-  current=0;answers={};
-  renderQuestion();
-  showScreen('assessment');
+  activeQs=shuffle(QUESTION_BANK).slice(0,DRAW_COUNT);
+  current=0;answers={};scores={fixer:0,diplomat:0,ghost:0,policy:0};
+  shuffledOpts=shuffle([...activeQs[0].opts]);
+  renderQuestion();showScreen('assessment');
 }
-
+ 
 function renderQuestion(){
-  const q=activeQuestions[current];
-  document.getElementById('progress-fill').style.width=Math.round((current/activeQuestions.length)*100)+'%';
+  const q=activeQs[current];
+  document.getElementById('progress-fill').style.width=Math.round((current/activeQs.length)*100)+'%';
   document.getElementById('q-num').textContent=current+1;
-  document.getElementById('domain-badge').textContent=DOMAINS.find(d=>d.id===q.domain).label;
   document.getElementById('question-text').textContent=q.text;
   document.getElementById('back-btn').style.display=current>0?'block':'none';
   const c=document.getElementById('options-container');c.innerHTML='';
-  LABELS.forEach((label,i)=>{
-    const val=i+1,btn=document.createElement('button');
-    btn.className='option-btn'+(answers[q.id]===val?' selected':'');
-    btn.innerHTML='<div class="radio-circle"><div class="radio-inner"></div></div><span class="option-label">'+label+'</span>';
-    btn.onclick=()=>selectAnswer(val);c.appendChild(btn);
+  const ar=answers[q.id];
+  shuffledOpts.forEach((o,i)=>{
+    const sel=ar===o.key;
+    const aData=sel?ARCHETYPES[o.key]:null;
+    const btn=document.createElement('button');
+    btn.className='option-btn'+(sel?' selected':'');
+    if(sel&&aData){btn.style.borderColor=aData.arc;btn.style.background=aData.nBg;btn.style.color=aData.nTc;}
+    btn.innerHTML='<div class="radio-circle"><div class="radio-inner"></div></div><span>'+o.label+'</span>';
+    btn.onclick=()=>pick(o.key);
+    c.appendChild(btn);
   });
 }
-
-function selectAnswer(val){
-  answers[activeQuestions[current].id]=val;renderQuestion();
+ 
+function pick(key){
+  const q=activeQs[current];
+  if(answers[q.id]){scores[answers[q.id]]--;}
+  answers[q.id]=key;scores[key]++;
+  renderQuestion();
   setTimeout(()=>{
     document.getElementById('question-text').classList.add('fade-out');
     setTimeout(()=>{
-      if(current<activeQuestions.length-1){current++;renderQuestion();document.getElementById('question-text').classList.remove('fade-out');}
-      else{calcResults();showScreen('gate');}
+      if(current<activeQs.length-1){
+        current++;
+        shuffledOpts=shuffle([...activeQs[current].opts]);
+        renderQuestion();
+        document.getElementById('question-text').classList.remove('fade-out');
+      } else {
+        showScreen('gate');
+      }
     },220);
-  },300);
+  },280);
 }
-
-function prevQuestion(){if(current>0){current--;renderQuestion();}}
-
-function calcResults(){
-  // Compute raw domain scores and normalized gaps
-  const domainNorm={};
-  DOMAIN_IDS.forEach(d=>{
-    const qs=activeQuestions.filter(q=>q.domain===d);
-    const actual=qs.reduce((sum,q)=>sum+(answers[q.id]||3),0);
-    const minP=qs.length*1,maxP=qs.length*5;
-    domainScores[d]=actual;
-    domainNorm[d]=(actual-minP)/(maxP-minP); // 0=worst, 1=best
-  });
-
-  // Overall health score (higher=better)
-  const avgNorm=DOMAIN_IDS.reduce((s,d)=>s+domainNorm[d],0)/DOMAIN_IDS.length;
-  finalScore=Math.round(avgNorm*100);
-
-  // Archetype fit: weighted sum of domain GAPS per archetype
-  const fits=ARCHETYPES.map(a=>{
-    const fit=DOMAIN_IDS.reduce((sum,d)=>sum+((1-domainNorm[d])*(a.weights[d]||0)),0);
-    return{id:a.id,fit};
-  });
-  fits.sort((a,b)=>b.fit-a.fit);
-  archetypeId=fits[0].id;
+ 
+function prevQuestion(){
+  if(current>0){
+    current--;
+    shuffledOpts=shuffle([...activeQs[current].opts]);
+    renderQuestion();
+  }
 }
-
-function getDomainStatus(norm){
-  if(norm>=0.75)return{label:'Stable',color:STATUS_COLORS.stable,key:'stable'};
-  if(norm>=0.50)return{label:'Under Pressure',color:STATUS_COLORS.pressure,key:'pressure'};
-  return{label:'Critical',color:STATUS_COLORS.critical,key:'critical'};
+ 
+function getTopArchetype(){
+  return Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
 }
-
-function getScoreStatus(score){
-  if(score>=75)return'Your workplace is relatively stable. Some areas worth monitoring.';
-  if(score>=55)return'Meaningful pressure in specific areas. Worth addressing before it compounds.';
-  if(score>=35)return'Significant stress across multiple dimensions. This needs attention.';
-  return'This situation is serious. Getting clarity on your options is urgent.';
-}
-
-async function submitEmail(){
+ 
+async function submitGate(){
   const email=document.getElementById('input-email').value.trim();
   const name=document.getElementById('input-name').value.trim();
   const role=document.getElementById('input-role').value.trim();
@@ -452,68 +445,77 @@ async function submitEmail(){
   document.getElementById('input-email').classList.remove('err');
   if(!email||!email.includes('@')||!email.includes('.')){errEl.style.display='block';document.getElementById('input-email').classList.add('err');return;}
   btn.textContent='Loading...';btn.disabled=true;
-  const a=ARCHETYPES.find(x=>x.id===archetypeId)||ARCHETYPES[0];
+  const top=getTopArchetype();
+  const a=ARCHETYPES[top];
   const payload={
-    _subject:'Workplace Read: '+a.name+' ('+finalScore+'/100) — '+(name||email),
-    '01_name': name||'Not provided',
-    '02_email': email,
-    '03_role': role||'Not provided',
-    '04_overall_score': finalScore+' / 100',
-    '05_archetype': a.name,
-    '06_archetype_tagline': a.tagline,
-    '07_summary': a.summary,
-    '08_signals': a.signals.map(s=>'• '+s).join('\n'),
-    '09_watchouts': a.watchouts.map(w=>'• '+w).join('\n'),
-    '10_next_step': a.next,
+    _subject:'Promoted Playbook Quiz: '+a.name+' — '+(name||email),
+    '01_name':name||'Not provided',
+    '02_email':email,
+    '03_role':role||'Not provided',
+    '04_archetype':a.name,
+    '05_archetype_tagline':a.tagline,
+    '06_match_score':scores[top]+' of '+DRAW_COUNT+' answers',
+    '07_breakdown':Object.entries(scores).map(([k,v])=>ARCHETYPE_LABELS[k]+': '+v).join(' | '),
+    '08_blind_spot':a.blind,
+    '09_cheat_code':a.code.map((c,i)=>(i+1)+'. '+c.b+' '+c.t).join('\n'),
   };
-  DOMAIN_IDS.forEach((d,i)=>{
-    const score=domainScores[d]||0;
-    const maxP=DRAW_PER_DOMAIN*5,minP=DRAW_PER_DOMAIN*1;
-    const norm=(score-minP)/(maxP-minP);
-    const st=getDomainStatus(norm);
-    const dom=DOMAINS.find(x=>x.id===d);
-    const num=String(11+i).padStart(2,'0');
-    payload[num+'_'+d]=score+'/'+(DRAW_PER_DOMAIN*5)+' — '+st.label+' ('+Math.round(norm*100)+'%)';
-  });
   try{await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});}catch(e){}
   userName=name;
   showResults();
 }
-
+ 
 function showResults(){
-  const a=ARCHETYPES.find(x=>x.id===archetypeId)||ARCHETYPES[0];
-  const circ=2*Math.PI*42;
-  const gr=document.getElementById('result-greeting');
+  const top=getTopArchetype();
+  const a=ARCHETYPES[top];
+  const matchCount=scores[top];
+  const circ=2*Math.PI*40;
+  const pct=matchCount/DRAW_COUNT;
+ 
+  const gr=document.getElementById('rh-greeting');
   if(userName){gr.textContent='Here are your results, '+userName.split(' ')[0]+'.';gr.style.display='block';}
-  document.getElementById('archetype-name').textContent=a.name;
-  document.getElementById('archetype-tagline').textContent=a.tagline;
-  document.getElementById('score-display').textContent=finalScore;
-  document.getElementById('score-status').textContent=getScoreStatus(finalScore);
+  document.getElementById('rh-name').textContent=a.name;
+  document.getElementById('rh-tagline').textContent=a.tagline;
+  document.getElementById('score-num').textContent=matchCount;
+  document.getElementById('score-desc').textContent=matchCount>=6?'Strong match — this is a consistent pattern, not a one-off.':matchCount>=4?'Clear lean — this is your dominant style, though you show some flexibility.':'Mixed result — you have traits of multiple archetypes. That has its own implications.';
+ 
   const arc=document.getElementById('score-arc');
-  setTimeout(()=>{arc.style.strokeDashoffset=circ-(finalScore/100)*circ;},100);
-  document.getElementById('archetype-summary').textContent=a.summary;
-
-  document.getElementById('signals-list').innerHTML=a.signals.map(s=>`<div class="signal-item"><div class="signal-dot"></div><div class="signal-text">${s}</div></div>`).join('');
-  document.getElementById('watchouts-list').innerHTML=a.watchouts.map(w=>`<div class="watch-item"><div class="watch-dot"></div><div class="watch-text">${w}</div></div>`).join('');
-
-  const grid=document.getElementById('domain-grid');grid.innerHTML='';
-  DOMAINS.forEach(d=>{
-    const score=domainScores[d.id]||0;
-    const maxP=DRAW_PER_DOMAIN*5,minP=DRAW_PER_DOMAIN*1;
-    const norm=(score-minP)/(maxP-minP);
-    const pct=Math.round(norm*100);
-    const st=getDomainStatus(norm);
-    const row=document.createElement('div');row.className='domain-row';
-    row.innerHTML=`<div class="domain-row-header"><div class="domain-row-name">${d.label}</div><div class="domain-row-status" style="color:${st.color}">${st.label}</div></div><div class="domain-bar-track"><div class="domain-bar-fill" style="width:0%;background:${st.color}" data-pct="${pct}"></div></div>`;
-    grid.appendChild(row);
+  arc.style.stroke=a.arc;
+  setTimeout(()=>{arc.style.strokeDashoffset=circ-(pct*circ);},100);
+ 
+  document.getElementById('truth-text').textContent=a.truth;
+ 
+  const bb=document.getElementById('blind-block');
+  bb.style.background=a.bBg;
+  document.getElementById('blind-label').style.color=a.bLc;
+  document.getElementById('blind-text').style.color=a.bTc;
+  document.getElementById('blind-text').textContent=a.blind;
+ 
+  const cl=document.getElementById('code-list');cl.innerHTML='';
+  a.code.forEach((c,i)=>{
+    const div=document.createElement('div');div.className='code-item';
+    div.innerHTML=`<div class="code-num" style="background:${a.nBg};color:${a.nTc}">${i+1}</div><div class="code-text"><b>${c.b}</b> ${c.t}</div>`;
+    cl.appendChild(div);
   });
-  setTimeout(()=>{document.querySelectorAll('.domain-bar-fill').forEach(b=>{b.style.width=b.dataset.pct+'%';});},150);
-  document.getElementById('next-text').textContent=a.next;
+ 
+  const bl=document.getElementById('breakdown-list');bl.innerHTML='';
+  Object.entries({fixer:'The Fixer',diplomat:'The Diplomat',ghost:'The Ghost',policy:'The Policy Manual'})
+    .sort((a,b)=>scores[b[0]]-scores[a[0]])
+    .forEach(([key,label])=>{
+      const pctFill=Math.round((scores[key]/DRAW_COUNT)*100);
+      const div=document.createElement('div');div.className='breakdown-item';
+      div.innerHTML=`<div class="breakdown-label">${label}</div><div class="breakdown-track"><div class="breakdown-fill" style="width:0%;background:${ARCHETYPES[key].arc}" data-pct="${pctFill}"></div></div><div class="breakdown-count">${scores[key]}</div>`;
+      bl.appendChild(div);
+    });
+  setTimeout(()=>{document.querySelectorAll('.breakdown-fill').forEach(b=>{b.style.width=b.dataset.pct+'%';});},150);
+ 
+  document.getElementById('gumroad-btn').href=GUMROAD_URL;
+  document.querySelector('.cta-price').textContent='$'+PLAYBOOK_PRICE+' CAD · Instant download · Gumroad';
+ 
   showScreen('result');
 }
-
+ 
 function restart(){
-  current=0;answers={};finalScore=null;domainScores={};userName='';archetypeId='';activeQuestions=[];
+  current=0;answers={};scores={fixer:0,diplomat:0,ghost:0,policy:0};userName='';activeQs=[];
   ['input-name','input-role','input-email'].forEach(id=>document.getElementById(id).value='');
   showScreen('intro');
 }

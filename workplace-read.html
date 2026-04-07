@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Workplace Read | BlueChip People Strategies</title>
+  <meta name="description" content="18 questions. 5 minutes. A clear read on what's actually happening at work — and what to do about it." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+
+    /* ─────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────── */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #FFFFFF;
+      color: #1A1A1A;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─────────────────────────────────────────
+       SCREENS
+    ───────────────────────────────────────── */
+
+    .screen { display: none; min-height: 100vh; }
+    .screen.active { display: block; }
+
+    /* ─────────────────────────────────────────
+       LAYOUT
+    ───────────────────────────────────────── */
+
+    .inner {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 64px 28px;
+    }
+
+    /* ─────────────────────────────────────────
+       DESIGN TOKENS
+    ───────────────────────────────────────── */
+
+    :root {
+      --navy:       #1E3A8A;
+      --navy-dark:  #162d6e;
+      --gold:       #C8A96E;
+      --off-white:  #F5F5F3;
+      --border:     #E0DED9;
+      --muted:      #555;
+      --blue-tint:  #EEF1FB;
+      --blue-border:#C8D2F0;
+    }
+
+    /* ─────────────────────────────────────────
+       TYPOGRAPHY
+    ───────────────────────────────────────── */
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .headline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(48px, 9vw, 68px);
+      font-weight: 600;
+      line-height: 1.0;
+      margin-bottom: 10px;
+      color: #1A1A1A;
+      letter-spacing: -0.02em;
+    }
+
+    .headline .blue { color: var(--navy); }
+
+    .blue-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--navy);
+      margin: 22px 0;
+    }
+
+    .body-text {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      font-weight: 300;
+      max-width: 460px;
+    }
+
+    /* ─────────────────────────────────────────
+       CARDS & UI COMPONENTS
+    ───────────────────────────────────────── */
+
+    .card {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .fi { display: flex; gap: 12px; margin-bottom: 11px; align-items: flex-start; }
+    .fd { color: var(--navy); font-size: 11px; margin-top: 4px; flex-shrink: 0; }
+    .ft { font-size: 14px; color: #444; line-height: 1.6; font-weight: 400; }
+
+    /* ─────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────── */
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 16px 40px;
+      background: var(--navy);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.18s;
+      text-transform: uppercase;
+    }
+
+    .btn-primary:hover { background: var(--navy-dark); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: #1A1A1A;
+      border-radius: 10px;
+      padding: 13px 30px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      text-transform: uppercase;
+      transition: opacity 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-gold:hover { opacity: 0.9; }
+
+    .btn-outline {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      background: transparent;
+      color: #888;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 12px;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      margin-top: 12px;
+      letter-spacing: 0.05em;
+      transition: all 0.15s;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .btn-outline:hover { border-color: var(--navy); color: var(--navy); }
+
+    .meta-text {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 11px;
+      color: #AAA;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─────────────────────────────────────────
+       TOP BAR & PROGRESS
+    ───────────────────────────────────────── */
+
+    .top-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: var(--navy);
+      z-index: 100;
+    }
+
+    .progress-track {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: var(--border);
+      z-index: 100;
+    }
+
+    .progress-fill {
+      height: 5px;
+      background: var(--navy);
+      transition: width 0.4s ease;
+    }
+
+    /* ─────────────────────────────────────────
+       ASSESSMENT SCREEN
+    ───────────────────────────────────────── */
+
+    .assess-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 44px;
+      padding-top: 20px;
+    }
+
+    .assess-brand {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--navy);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .assess-count {
+      font-size: 13px;
+      color: #BBB;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    .assess-count strong { color: #1A1A1A; font-weight: 600; }
+
+    .domain-badge {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--navy);
+      background: var(--blue-tint);
+      border: 1px solid var(--blue-border);
+      border-radius: 50px;
+      padding: 5px 14px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .question-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(20px, 3.8vw, 25px);
+      font-weight: 500;
+      line-height: 1.5;
+      color: #1A1A1A;
+      margin-bottom: 44px;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      letter-spacing: 0.005em;
+    }
+
+    .question-text.fade-out {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    /* ─────────────────────────────────────────
+       OPTIONS
+    ───────────────────────────────────────── */
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      border: 1.5px solid #E8E6E1;
+      background: #FAFAFA;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      transition: all 0.15s ease;
+      text-align: left;
+      width: 100%;
+      font-weight: 400;
+    }
+
+    .option-btn:hover { border-color: var(--navy); color: var(--navy); background: #F0F3FB; }
+
+    .option-btn.selected {
+      border-color: var(--navy);
+      background: var(--blue-tint);
+      color: var(--navy);
+    }
+
+    .radio-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 1.5px solid #CCC;
+      background: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn.selected .radio-circle {
+      border-color: var(--navy);
+      background: var(--navy);
+    }
+
+    .radio-inner {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #FFF;
+      display: none;
+    }
+
+    .option-btn.selected .radio-inner { display: block; }
+    .option-btn.selected .option-label { font-weight: 600; color: var(--navy); }
+
+    .back-btn {
+      background: transparent;
+      border: none;
+      color: #AAA;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      padding: 0;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .back-btn:hover { color: var(--navy); }
+
+    /* ─────────────────────────────────────────
+       INPUT FIELDS
+    ───────────────────────────────────────── */
+
+    .input-field {
+      width: 100%;
+      background: #FFF;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      color: #1A1A1A;
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 14px;
+      display: block;
+      font-weight: 400;
+    }
+
+    .input-field:focus { border-color: var(--navy); }
+    .input-field.err { border-color: #C0392B; }
+    .input-field::placeholder { color: #BBB; }
+
+    .error-msg {
+      font-size: 12px;
+      color: #C0392B;
+      margin-top: -10px;
+      margin-bottom: 14px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .privacy-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; }
+    .privacy-text {
+      font-size: 11px;
+      color: #AAA;
+      line-height: 1.6;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    /* ─────────────────────────────────────────
+       RESULTS SCREEN
+    ───────────────────────────────────────── */
+
+    .score-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .score-ring-wrap { position: relative; flex-shrink: 0; }
+    .score-ring-wrap svg { transform: rotate(-90deg); }
+
+    .score-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score-num {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: var(--navy);
+    }
+
+    .score-denom {
+      font-size: 9px;
+      color: #AAA;
+      letter-spacing: 0.1em;
+      font-family: 'DM Sans', sans-serif;
+      margin-top: 2px;
+    }
+
+    .divider { height: 1px; background: #E8E6E1; margin-bottom: 28px; }
+
+    .summary-text {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 28px;
+      font-weight: 300;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .mini-card {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .mini-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .mini-item { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
+    .mini-dot { font-size: 8px; margin-top: 5px; flex-shrink: 0; }
+    .mini-text { font-size: 12px; color: #666; line-height: 1.5; font-family: 'DM Sans', sans-serif; font-weight: 400; }
+
+    .next-card {
+      border-radius: 0 12px 12px 0;
+      padding: 22px;
+      margin-bottom: 32px;
+      border-left: 4px solid var(--navy);
+      background: var(--blue-tint);
+    }
+
+    .next-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .next-text {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.75;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .cta-card {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #FFF;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .cta-body {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.75;
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 22px;
+      font-weight: 300;
+    }
+
+    .result-header-bar {
+      background: var(--navy);
+      margin: -64px -28px 40px;
+      padding: 36px 28px 28px;
+      position: relative;
+    }
+
+    .archetype-name-display {
+      font-size: 26px;
+      font-weight: 600;
+      color: #1A1A1A;
+      line-height: 1.2;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .archetype-tagline-display {
+      font-size: 13px;
+      color: #888;
+      margin-top: 5px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 10px;
+      color: #CCC;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 600px) {
+      .two-col { grid-template-columns: 1fr; }
+      .score-row { gap: 20px; }
+      .inner { padding: 52px 20px; }
+      .result-header-bar { margin: -52px -20px 32px; padding: 28px 20px 24px; }
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <!-- ══════════════════════════════════════
+       INTRO SCREEN
+  ══════════════════════════════════════ -->
+
+  <div id="screen-intro" class="screen active">
+    <div class="top-bar"></div>
+    <div class="inner">
+
+      <div class="eyebrow">BlueChip People Strategies</div>
+
+      <h1 class="headline">
+        The Workplace<br><span class="blue">Read</span>
+      </h1>
+
+      <div class="blue-rule"></div>
+
+      <p class="body-text">
+        18 questions. 5 minutes. A clear read on what's actually happening
+        at work — and what to do about it.
+      </p>
+
+      <div class="card">
+        <div class="card-label">You'll discover</div>
+        <div class="fi"><div class="fd">◆</div><div class="ft">Your Workplace Read score out of 90</div></div>
+        <div class="fi"><div class="fd">◆</div><div class="ft">Your workplace situation archetype</div></div>
+        <div class="fi"><div class="fd">◆</div><div class="ft">Where the real pressure points are</div></div>
+        <div class="fi"><div class="fd">◆</div><div class="ft">A clear picture of what to do next</div></div>
+      </div>
+
+      <p style="font-size: 13px; color: #AAA; margin-bottom: 24px; line-height: 1.7; font-family: 'DM Sans', sans-serif; font-weight: 300;">
+        Answer based on your <em style="color: #888;">current reality</em> — not how you wish things were.
+      </p>
+
+      <button class="btn-primary" onclick="startAssessment()">Get My Workplace Read →</button>
+
+      <div class="meta-text">4 dimensions · 18 questions · Free</div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       ASSESSMENT SCREEN
+  ══════════════════════════════════════ -->
+
+  <div id="screen-assessment" class="screen">
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+    </div>
+    <div class="inner" style="padding-top: 48px;">
+
+      <div class="assess-header">
+        <div class="assess-brand">The Workplace Read</div>
+        <div class="assess-count"><strong id="q-num">1</strong> / 18</div>
+      </div>
+
+      <div class="domain-badge" id="domain-badge">Management & Leadership</div>
+      <div class="question-text" id="question-text"></div>
+      <div class="options" id="options-container"></div>
+      <button class="back-btn" id="back-btn" onclick="prevQuestion()" style="display: none;">← Previous</button>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       EMAIL GATE SCREEN
+  ══════════════════════════════════════ -->
+
+  <div id="screen-gate" class="screen">
+    <div class="top-bar"></div>
+    <div class="inner">
+
+      <div class="eyebrow">BlueChip People Strategies</div>
+
+      <h2 class="headline" style="font-size: clamp(30px, 5vw, 40px);">
+        Your Workplace Read<br><span class="blue">is ready.</span>
+      </h2>
+
+      <div class="blue-rule"></div>
+
+      <p class="body-text">
+        Enter your details to unlock your archetype, score, and what
+        your results actually mean for your situation.
+      </p>
+
+      <input class="input-field" id="input-name" type="text" placeholder="Your name" />
+      <input class="input-field" id="input-email" type="email" placeholder="Email address" />
+
+      <div class="error-msg" id="email-error" style="display: none;">
+        Please enter a valid email address.
+      </div>
+      <div class="error-msg" id="submit-error" style="display: none;">
+        Something went wrong. Please try again.
+      </div>
+
+      <button class="btn-primary" id="gate-btn" onclick="submitEmail()">View My Results →</button>
+
+      <div class="privacy-note">
+        <div class="privacy-text">
+          Your information is kept private. BlueChip People Strategies
+          does not sell or share your data.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       RESULTS SCREEN
+  ══════════════════════════════════════ -->
+
+  <div id="screen-result" class="screen">
+    <div class="result-header-bar">
+
+      <div style="font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 0.4em; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 20px; font-weight: 500;">
+        BlueChip People Strategies · The Workplace Read
+      </div>
+
+      <div id="result-greeting" style="display: none; font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 10px; font-family: 'DM Sans', sans-serif; font-weight: 300;"></div>
+
+      <div class="score-row">
+        <div class="score-ring-wrap">
+          <svg width="120" height="120" viewBox="0 0 128 128">
+            <circle cx="64" cy="64" r="54" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="8"/>
+            <circle
+              id="score-arc"
+              cx="64" cy="64" r="54"
+              fill="none" stroke="#FFFFFF" stroke-width="8"
+              stroke-dasharray="339.292" stroke-dashoffset="339.292"
+              stroke-linecap="round"
+              style="transition: stroke-dashoffset 1.2s ease;"
+            />
+          </svg>
+          <div class="score-overlay">
+            <div id="score-display" style="font-size: 30px; font-weight: 700; line-height: 1; font-family: 'Cormorant Garamond', Georgia, serif; color: #FFF;">—</div>
+            <div style="font-size: 9px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; font-family: 'DM Sans', sans-serif; margin-top: 2px;">/ 90</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'DM Sans', sans-serif; font-size: 9px; color: rgba(255,255,255,0.5); letter-spacing: 0.35em; text-transform: uppercase; margin-bottom: 8px; font-weight: 500;">Your archetype</div>
+          <div id="archetype-symbol" style="font-size: 28px; margin-bottom: 4px; color: #FFF;"></div>
+          <div class="archetype-name-display" id="archetype-name" style="color: #FFF;"></div>
+          <div class="archetype-tagline-display" id="archetype-tagline" style="color: rgba(255,255,255,0.6);"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="inner" style="padding-top: 8px;">
+
+      <div class="divider"></div>
+      <div class="summary-text" id="archetype-summary"></div>
+
+      <div class="two-col">
+        <div class="mini-card">
+          <div class="mini-label" style="color: var(--navy);">What this tells you</div>
+          <div id="signals-list"></div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-label" style="color: #C0392B;">What to watch for</div>
+          <div id="watchouts-list"></div>
+        </div>
+      </div>
+
+      <div class="next-card">
+        <div class="next-label">Your next move</div>
+        <div class="next-text" id="next-text"></div>
+      </div>
+
+      <div class="cta-card">
+        <div class="cta-title">Get a straight read on your situation.</div>
+        <div class="cta-body">
+          The Employee Clarity Call is a one-time 45-minute confidential conversation.
+          You talk. We listen. We tell you honestly what we see — your options,
+          your rights, and what a realistic path forward looks like.
+          No judgment. No agenda. Just clarity.
+        </div>
+        <a
+          href="https://buy.stripe.com/fZu7sK0y98551jl2SFco005"
+          target="_blank"
+          class="btn-gold"
+        >
+          Book Your Employee Clarity Call — $250 →
+        </a>
+      </div>
+
+      <button class="btn-outline" onclick="restart()">Retake the assessment</button>
+      <div class="copyright">© BlueChip People Strategies · bluechip-people-strategies.com</div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════ -->
+
+  <script>
+
+    /* ─────────────────────────────────────────
+       CONFIGURATION
+    ───────────────────────────────────────── */
+
+    const FORMSPREE = 'https://formspree.io/f/mwvwyvry';
+
+    /* ─────────────────────────────────────────
+       QUESTIONS (18 total, 4 domains)
+       Scale: 1 = Strongly Disagree, 5 = Strongly Agree
+       Higher score = better workplace situation
+    ───────────────────────────────────────── */
+
+    const QUESTIONS = [
+
+      /* Management & Leadership (5 questions) */
+      {
+        id: 1,
+        domain: 'Management & Leadership',
+        text: 'My manager treats me with respect and fairness on a consistent basis.'
+      },
+      {
+        id: 2,
+        domain: 'Management & Leadership',
+        text: 'I feel genuinely supported by my manager — not just managed.'
+      },
+      {
+        id: 3,
+        domain: 'Management & Leadership',
+        text: 'When I raise concerns with my manager, they are heard and taken seriously.'
+      },
+      {
+        id: 4,
+        domain: 'Management & Leadership',
+        text: 'My performance is evaluated honestly, accurately, and without bias.'
+      },
+      {
+        id: 5,
+        domain: 'Management & Leadership',
+        text: 'My relationship with my direct manager feels stable and predictable.'
+      },
+
+      /* Workplace Conduct & Fairness (4 questions) */
+      {
+        id: 6,
+        domain: 'Conduct & Fairness',
+        text: 'I am treated equitably compared to my colleagues in similar roles.'
+      },
+      {
+        id: 7,
+        domain: 'Conduct & Fairness',
+        text: 'I have not experienced or witnessed conduct that felt hostile, discriminatory, or inappropriate.'
+      },
+      {
+        id: 8,
+        domain: 'Conduct & Fairness',
+        text: 'Workplace issues, when they arise, are handled fairly and consistently.'
+      },
+      {
+        id: 9,
+        domain: 'Conduct & Fairness',
+        text: 'I feel safe raising concerns about conduct or treatment without fear of retaliation.'
+      },
+
+      /* Workload & Sustainability (4 questions) */
+      {
+        id: 10,
+        domain: 'Workload & Sustainability',
+        text: 'My workload is manageable and does not regularly compromise my wellbeing.'
+      },
+      {
+        id: 11,
+        domain: 'Workload & Sustainability',
+        text: 'The expectations placed on me are reasonable given my role and available resources.'
+      },
+      {
+        id: 12,
+        domain: 'Workload & Sustainability',
+        text: 'I am able to disconnect from work and recover outside of working hours.'
+      },
+      {
+        id: 13,
+        domain: 'Workload & Sustainability',
+        text: 'I can realistically sustain my current pace of work for the next six months.'
+      },
+
+      /* Career & Development (5 questions) */
+      {
+        id: 14,
+        domain: 'Career & Development',
+        text: 'I can see a realistic and meaningful path forward for my career in this organization.'
+      },
+      {
+        id: 15,
+        domain: 'Career & Development',
+        text: 'My contributions are recognized and reflected in how I am treated and rewarded.'
+      },
+      {
+        id: 16,
+        domain: 'Career & Development',
+        text: 'My development genuinely matters to the people above me — not just on paper.'
+      },
+      {
+        id: 17,
+        domain: 'Career & Development',
+        text: 'I feel invested in by this organization.'
+      },
+      {
+        id: 18,
+        domain: 'Career & Development',
+        text: 'If nothing changes, I can see myself still in this role one year from now.'
+      },
+
+    ];
+
+    /* ─────────────────────────────────────────
+       ANSWER LABELS
+    ───────────────────────────────────────── */
+
+    const LABELS = [
+      'Strongly Disagree',
+      'Disagree',
+      'Neutral',
+      'Agree',
+      'Strongly Agree'
+    ];
+
+    /* ─────────────────────────────────────────
+       ARCHETYPES
+       Score range: 18 (all 1s) — 90 (all 5s)
+    ───────────────────────────────────────── */
+
+    const ARCHETYPES = [
+      {
+        min: 76,
+        max: 90,
+        name: 'The Watchful',
+        symbol: '◈',
+        tagline: 'Stable. Aware. Worth paying attention to.',
+        summary: 'Your results suggest a workplace that is broadly functioning. But something brought you here — and that instinct is worth trusting. The Watchful are often the first to notice when things are beginning to shift. Not because anything is overtly wrong, but because they\'re paying attention. Use this as a baseline. Check back in six months.',
+        signals: [
+          'Workplace is broadly functional across most dimensions',
+          'You have enough stability to think clearly about your options',
+          'Capacity to be proactive rather than reactive'
+        ],
+        watchouts: [
+          'Early signals can be easy to rationalize away',
+          'Stability can shift faster than expected',
+          'Not naming something doesn\'t mean it isn\'t there'
+        ],
+        next: 'Trust the instinct that brought you here. If one dimension of your results felt off — even with a healthy overall score — that\'s the signal worth examining. A Clarity Call can help you name what you\'re sensing before it becomes something bigger.'
+      },
+      {
+        min: 62,
+        max: 75,
+        name: 'The Quietly Unsettled',
+        symbol: '◎',
+        tagline: 'Functional. But something\'s off.',
+        summary: 'On the surface, things are manageable. But you\'re here for a reason. The Quietly Unsettled often describe their situation as "fine" — until they say it out loud. Something isn\'t sitting right. The gap between what\'s acceptable and what you\'re actually experiencing is starting to show up in ways you can feel but haven\'t fully named yet.',
+        signals: [
+          'Still functional and managing day-to-day',
+          'Enough stability to consider your options thoughtfully',
+          'Not yet in crisis — there\'s space to act before it becomes one'
+        ],
+        watchouts: [
+          '"Fine" is often the word people use before things aren\'t',
+          'The cost of staying quiet about something wrong adds up slowly',
+          'Waiting for things to get worse before acting is a common and expensive trap'
+        ],
+        next: 'The fact that you can\'t fully name what\'s wrong doesn\'t mean nothing\'s wrong. A Clarity Call is exactly right for this situation — not because something has definitely happened, but because you need someone to help you read what\'s actually going on before you decide what to do about it.'
+      },
+      {
+        min: 47,
+        max: 61,
+        name: 'The Grinding Through',
+        symbol: '◐',
+        tagline: 'Managing. But at a cost.',
+        summary: 'You\'re keeping up — but it\'s taking more than it should. The Grinding Through often stay in difficult situations longer than is healthy, not because they\'re weak, but because they\'re capable. They find a way. The risk is that finding a way becomes the whole job, and the actual problem never gets addressed. Your results suggest one or more dimensions of your work life are under real pressure.',
+        signals: [
+          'Resilience and capacity to navigate difficulty',
+          'Still functioning — which means options remain open',
+          'Awareness that something needs to change is itself useful'
+        ],
+        watchouts: [
+          'Resilience has limits — and they\'re closer than they look',
+          'The longer a difficult situation runs, the harder it is to see clearly from inside it',
+          'Waiting for things to break before acting is expensive in more ways than one'
+        ],
+        next: 'This is the zone where a Clarity Call pays for itself. You\'re not in crisis, but you\'re close enough that getting a clear-eyed read from someone outside your situation is worth more than another month of grinding. Come with what\'s actually happening. Leave with a clearer picture of what to do about it.'
+      },
+      {
+        min: 33,
+        max: 46,
+        name: 'The Eroding',
+        symbol: '◉',
+        tagline: 'Under real pressure. Options still exist.',
+        summary: 'Multiple things aren\'t working — and you\'re feeling it. The Eroding describes people who are dealing with a genuine workplace problem that has gone on long enough to start affecting how they feel, how they perform, and how they see their future there. This is a serious situation. Not an emergency — but it needs attention, not more patience.',
+        signals: [
+          'You\'re still here, which means you haven\'t given up',
+          'Awareness of the problem is the first step toward addressing it',
+          'There are still options — more than it probably feels like right now'
+        ],
+        watchouts: [
+          'Time is not working in your favour here',
+          'Continued exposure to a bad situation has real costs — professionally and personally',
+          'The gap between what\'s acceptable and what you\'re experiencing is significant'
+        ],
+        next: 'Don\'t wait for it to get worse before you talk to someone. A Clarity Call will help you understand what\'s actually happening, what your options are, and what a realistic path forward looks like. You deserve a straight read from someone who will tell you the truth.'
+      },
+      {
+        min: 18,
+        max: 32,
+        name: 'The Breaking Point',
+        symbol: '◑',
+        tagline: 'This needs attention. Now.',
+        summary: 'Your results indicate that you are in a genuinely difficult workplace situation. Multiple dimensions are under severe pressure, and the gap between what you\'re experiencing and what\'s acceptable is significant. This is not a "wait and see" situation. The Breaking Point describes people who are often holding on through willpower alone — and willpower isn\'t a strategy.',
+        signals: [
+          'The fact that you\'re here means you\'re still looking for a way through',
+          'Clarity about the severity is itself useful — it tells you this isn\'t in your head',
+          'You have more options than it feels like right now'
+        ],
+        watchouts: [
+          'Continuing without support has compounding costs',
+          'This situation is unlikely to resolve on its own',
+          'Your wellbeing — not just your job — is at stake'
+        ],
+        next: 'Book a Clarity Call. This is exactly the kind of situation it exists for — a confidential, honest conversation with someone who can help you understand what\'s happening, what your rights and options are, and what a real path forward looks like. You don\'t have to navigate this alone.'
+      }
+    ];
+
+    /* ─────────────────────────────────────────
+       STATE
+    ───────────────────────────────────────── */
+
+    let current    = 0;
+    let answers    = {};
+    let finalScore = null;
+    let userName   = '';
+
+    /* ─────────────────────────────────────────
+       SCREEN MANAGEMENT
+    ───────────────────────────────────────── */
+
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById('screen-' + id).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    /* ─────────────────────────────────────────
+       URL PARAMS — direct result link
+    ───────────────────────────────────────── */
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const p  = new URLSearchParams(window.location.search);
+      const sc = parseInt(p.get('score'), 10);
+      const nm = p.get('name') || '';
+
+      if (!isNaN(sc) && sc >= 18 && sc <= 90) {
+        finalScore = sc;
+        userName   = decodeURIComponent(nm);
+        showResults();
+      }
+    });
+
+    /* ─────────────────────────────────────────
+       ASSESSMENT FLOW
+    ───────────────────────────────────────── */
+
+    function startAssessment() {
+      current = 0;
+      answers = {};
+      renderQuestion();
+      showScreen('assessment');
+    }
+
+    function renderQuestion() {
+      const q   = QUESTIONS[current];
+      const pct = Math.round((current / QUESTIONS.length) * 100);
+
+      document.getElementById('progress-fill').style.width = pct + '%';
+      document.getElementById('q-num').textContent         = current + 1;
+      document.getElementById('domain-badge').textContent  = q.domain;
+      document.getElementById('question-text').textContent = q.text;
+      document.getElementById('back-btn').style.display   = current > 0 ? 'block' : 'none';
+
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+
+      LABELS.forEach((label, i) => {
+        const val = i + 1;
+        const btn = document.createElement('button');
+
+        btn.className = 'option-btn' + (answers[q.id] === val ? ' selected' : '');
+        btn.innerHTML = '<div class="radio-circle"><div class="radio-inner"></div></div>'
+                      + '<span class="option-label">' + label + '</span>';
+        btn.onclick   = () => selectAnswer(val);
+
+        container.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(val) {
+      answers[QUESTIONS[current].id] = val;
+      renderQuestion();
+
+      setTimeout(() => {
+        document.getElementById('question-text').classList.add('fade-out');
+
+        setTimeout(() => {
+          if (current < QUESTIONS.length - 1) {
+            current++;
+            renderQuestion();
+            document.getElementById('question-text').classList.remove('fade-out');
+          } else {
+            finalScore = calcScore();
+            showScreen('gate');
+          }
+        }, 220);
+      }, 300);
+    }
+
+    function prevQuestion() {
+      if (current > 0) {
+        current--;
+        renderQuestion();
+      }
+    }
+
+    function calcScore() {
+      let total = 0;
+      QUESTIONS.forEach(q => {
+        total += (answers[q.id] || 3);
+      });
+      return total;
+    }
+
+    /* ─────────────────────────────────────────
+       EMAIL GATE
+    ───────────────────────────────────────── */
+
+    async function submitEmail() {
+      const email    = document.getElementById('input-email').value.trim();
+      const name     = document.getElementById('input-name').value.trim();
+      const errEl    = document.getElementById('email-error');
+      const subErr   = document.getElementById('submit-error');
+      const btn      = document.getElementById('gate-btn');
+      const archetype = getArchetype(finalScore);
+
+      errEl.style.display  = 'none';
+      subErr.style.display = 'none';
+      document.getElementById('input-email').classList.remove('err');
+
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        errEl.style.display = 'block';
+        document.getElementById('input-email').classList.add('err');
+        return;
+      }
+
+      btn.textContent = 'Loading...';
+      btn.disabled    = true;
+
+      const payload = {
+        _subject:  'Workplace Read: ' + finalScore + '/90 — ' + archetype.name + ' — ' + (name || email),
+        '01_name':      name || 'Not provided',
+        '02_email':     email,
+        '03_score':     finalScore + ' / 90',
+        '04_archetype': archetype.name,
+        '05_tagline':   archetype.tagline,
+        '06_summary':   archetype.summary,
+        '07_next_move': archetype.next,
+      };
+
+      try {
+        await fetch(FORMSPREE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        /* Silent fail — results show regardless */
+      }
+
+      userName = name;
+      showResults();
+    }
+
+    /* ─────────────────────────────────────────
+       RESULTS
+    ───────────────────────────────────────── */
+
+    function getArchetype(score) {
+      return ARCHETYPES.find(a => score >= a.min && score <= a.max) || ARCHETYPES[4];
+    }
+
+    function showResults() {
+      const a    = getArchetype(finalScore);
+      const circ = 2 * Math.PI * 54;
+      const pct  = (finalScore - 18) / (90 - 18); /* normalise 18-90 to 0-1 */
+
+      /* Greeting */
+      const gr = document.getElementById('result-greeting');
+      if (userName) {
+        gr.textContent  = 'Here are your results, ' + userName.split(' ')[0] + '.';
+        gr.style.display = 'block';
+      }
+
+      /* Score ring */
+      document.getElementById('score-display').textContent = finalScore;
+      const arc = document.getElementById('score-arc');
+      setTimeout(() => {
+        arc.style.strokeDashoffset = circ - (pct * circ);
+      }, 100);
+
+      /* Archetype */
+      document.getElementById('archetype-symbol').textContent  = a.symbol;
+      document.getElementById('archetype-name').textContent    = a.name;
+      document.getElementById('archetype-tagline').textContent = a.tagline;
+      document.getElementById('archetype-summary').textContent = a.summary;
+      document.getElementById('next-text').textContent         = a.next;
+
+      /* Signals list */
+      document.getElementById('signals-list').innerHTML = a.signals.map(s =>
+        '<div class="mini-item">'
+        + '<div class="mini-dot" style="color: var(--navy);">◆</div>'
+        + '<div class="mini-text">' + s + '</div>'
+        + '</div>'
+      ).join('');
+
+      /* Watchouts list */
+      document.getElementById('watchouts-list').innerHTML = a.watchouts.map(w =>
+        '<div class="mini-item">'
+        + '<div class="mini-dot" style="color: #C0392B;">◆</div>'
+        + '<div class="mini-text">' + w + '</div>'
+        + '</div>'
+      ).join('');
+
+      showScreen('result');
+    }
+
+    /* ─────────────────────────────────────────
+       RESTART
+    ───────────────────────────────────────── */
+
+    function restart() {
+      current    = 0;
+      answers    = {};
+      finalScore = null;
+      userName   = '';
+
+      document.getElementById('input-name').value  = '';
+      document.getElementById('input-email').value = '';
+
+      window.history.replaceState({}, '', window.location.pathname);
+      showScreen('intro');
+    }
+
+  </script>
+
+</body>
+</html>
